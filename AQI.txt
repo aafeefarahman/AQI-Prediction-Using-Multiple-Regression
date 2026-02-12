@@ -1,0 +1,36 @@
+# Load required libraries
+library(ggplot2)
+# Load the dataset
+# Replace the path with your actual CSV file path
+data <- read.csv("C:/Users/aafee/OneDrive/Desktop/templete/Air_Quality_data.csv", stringsAsFactors = FALSE)
+# Clean the data
+# Remove units and convert to numeric
+cols_to_clean <- c("AQI","PM2.5","PM10","O3","NO2","SO2","CO")
+for(col in cols_to_clean){
+  # Remove µg/m³, mg/m³, and any spaces
+  data[[col]] <- as.numeric(gsub("[^0-9\\.]", "", data[[col]]))
+}
+# Remove rows with missing AQI
+data <- data[!is.na(data$AQI), ]
+# Fit multiple linear regression model
+model <- lm(AQI ~ PM2.5 + PM10 + O3 + NO2 + SO2 + CO, data=data)
+# View summary of the model
+summary(model)
+# Predict AQI for a new observation (example)
+new_data <- data.frame(PM2.5=112.3, PM10=53.2, O3=16.7, NO2=9.5, SO2=9.8, CO=7.1)
+predicted_AQI <- predict(model, newdata=new_data)
+print(paste("Predicted AQI:", round(predicted_AQI, 2)))
+# Actual vs Predicted AQI plot
+predicted_values <- predict(model)
+ggplot(data, aes(x=AQI, y=predicted_values)) +
+  geom_point(color="blue") +
+  geom_abline(intercept=0, slope=1, color="red", linetype="dashed") +
+  labs(title="Actual vs Predicted AQI", x="Actual AQI", y="Predicted AQI") +
+  theme_minimal()
+# Effect of each pollutant on AQI
+coeff <- summary(model)$coefficients
+coeff_df <- data.frame(Pollutant=rownames(coeff)[-1], Effect=coeff[-1,1])
+ggplot(coeff_df, aes(x=Pollutant, y=Effect, fill=Pollutant)) +
+  geom_bar(stat="identity") +
+  labs(title="Effect of Each Pollutant on AQI", y="Coefficient Value") +
+  theme_minimal()
