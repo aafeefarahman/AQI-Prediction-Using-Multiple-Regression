@@ -1,12 +1,12 @@
 # AQI Prediction Using Multiple Regression
 
-## 📌 Project Description
+## Project Description
 
 A data analysis project using a secondary dataset of 154 cities to study air quality and apply multiple linear regression to understand how major pollutants (PM2.5, PM10, O₃, NO₂, SO₂ and CO) influence the Air Quality Index (AQI).
 
 ---
 
-## 🎯 Project Objective
+## Project Objective
 
 The main objective of this project is to:
 
@@ -15,7 +15,7 @@ The main objective of this project is to:
 
 ---
 
-## 📂 Dataset Information
+## Dataset Information
 
 * Type: Secondary dataset
 * Number of cities: 154
@@ -35,7 +35,7 @@ The main objective of this project is to:
 
 ---
 
-## 🧹 Data Pre-processing
+## Data Pre-processing
 
 The following steps were performed before analysis:
 
@@ -48,7 +48,7 @@ The following steps were performed before analysis:
 
 ---
 
-## 🗂 Final Variables Used
+## Final Variables Used
 
 | Variable | Description                         |
 | -------- | ----------------------------------- |
@@ -62,7 +62,7 @@ The following steps were performed before analysis:
 
 ---
 
-## 🏷 Air Quality Categorisation
+## Air Quality Categorisation
 
 The pollutants and AQI values were classified into:
 
@@ -77,7 +77,7 @@ based on:
 
 ---
 
-## 📊 Exploratory Data Analysis
+## Exploratory Data Analysis
 
 The following visual analyses were performed:
 
@@ -92,7 +92,7 @@ These charts were used to identify the cities contributing most to overall pollu
 
 ---
 
-## 📐 Methodology – Multiple Linear Regression
+## Methodology – Multiple Linear Regression
 
 ### Dependent Variable
 
@@ -108,7 +108,7 @@ AQI = β₀ + β₁(PM2.5) + β₂(PM10) + β₃(O₃) + β₄(NO₂) + β₅(SO
 
 ---
 
-## 📈 Average Pollution Levels (154 Cities)
+## Average Pollution Levels (154 Cities)
 
 | Pollutant | Average Value |
 | --------- | ------------- |
@@ -122,7 +122,7 @@ AQI = β₀ + β₁(PM2.5) + β₂(PM10) + β₃(O₃) + β₄(NO₂) + β₅(SO
 
 ---
 
-## 🧮 Conceptual Regression Model (for interpretation)
+## Conceptual Regression Model (for interpretation)
 
 AQI = 26.88
 
@@ -137,7 +137,7 @@ AQI = 26.88
 
 ---
 
-## 🔍 Key Findings
+## Key Findings
 
 * PM2.5 is the largest contributor to AQI.
 * PM10 and NO₂ show moderate influence.
@@ -146,7 +146,7 @@ AQI = 26.88
 
 ---
 
-## 🛠 Tools and Technologies
+##  Tools and Technologies
 
 * Python
 * Pandas
@@ -156,7 +156,7 @@ AQI = 26.88
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ├── dataset/
@@ -170,7 +170,7 @@ AQI = 26.88
 
 ---
 
-## ▶ How to Run
+## How to Run
 
 1. Clone the repository
 2. Open the notebook file
