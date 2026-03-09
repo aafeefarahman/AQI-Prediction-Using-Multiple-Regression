@@ -155,21 +155,6 @@ AQI = 26.88
 * Jupyter Notebook
 
 ---
-
-## Project Structure
-
-```
-├── dataset/
-│   └── air_quality_data.csv
-├── notebooks/
-│   └── aqi_analysis.ipynb
-├── charts/
-│   └── generated_plots
-├── README.md
-```
-
----
-
 ## How to Run
 
 1. Clone the repository
