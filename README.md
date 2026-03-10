@@ -1,6 +1,6 @@
-# 🌍 AQI Prediction Using Multiple Regression
+# 🌍AQI Prediction Using Multiple Regression
 
-## 📌 Project Description
+## 📌Project Description
 
 This project analyses air quality data from multiple cities to understand how different pollutants influence the **Air Quality Index (AQI)**.
 
@@ -10,7 +10,7 @@ The analysis combines **statistical modelling in R** with **visual dashboard ana
 
 ---
 
-# 🎯 Project Objectives
+# 🎯Project Objectives
 
 The main goals of this project are:
 
@@ -21,13 +21,13 @@ The main goals of this project are:
 
 ---
 
-# 📂 Dataset Information
+# 📂Dataset Information
 
 • **Type:** Secondary dataset
 • **Source:** Mendeley Data – *Air Quality Index of Major Indian Cities and Stations*
 • **Observations:** 154 cities/stations
 
-### 📑 Features Used
+### 📑Features Used
 
 * City
 * AQI
@@ -44,7 +44,7 @@ The main goals of this project are:
 
 ---
 
-# 🧹 Data Pre-processing
+# Data Pre-processing
 
 Before performing analysis, the following cleaning steps were applied:
 
@@ -57,7 +57,7 @@ Before performing analysis, the following cleaning steps were applied:
 
 ---
 
-# 📊 Exploratory Data Analysis & Visualisation
+# 📊Exploratory Data Analysis & Visualisation
 
 ### 📍 Top 10 Most Polluted Locations
 
@@ -66,7 +66,7 @@ Shows cities contributing most to **high AQI values**.
 
 ---
 
-### 📅 AQI Trend Over Time
+### 📅AQI Trend Over Time
 
 Visualises how **AQI changes across observation dates**.
 <img width="721" height="426" alt="image" src="https://github.com/user-attachments/assets/48950275-106f-4635-9059-9b4c79681a26" />
@@ -87,15 +87,15 @@ Scatter plot showing the correlation between **PM2.5 concentration and AQI**.
 
 ---
 
-# 📉 Methodology – Multiple Linear Regression
+# 📉Methodology – Multiple Linear Regression
 
 A **Multiple Linear Regression model** was built using **R**.
 
-### 🎯 Dependent Variable
+### 🎯Dependent Variable
 
 * AQI
 
-### 🔬 Independent Variables
+### 🔬Independent Variables
 
 * PM2.5
 * PM10
@@ -104,7 +104,7 @@ A **Multiple Linear Regression model** was built using **R**.
 * SO2
 * CO
 
-### 📌 Regression Model
+### 📌Regression Model
 
 ```
 AQI = β₀ + β₁(PM2.5) + β₂(PM10) + β₃(O3) + β₄(NO2) + β₅(SO2) + β₆(CO) + ε
@@ -112,7 +112,7 @@ AQI = β₀ + β₁(PM2.5) + β₂(PM10) + β₃(O3) + β₄(NO2) + β₅(SO2) +
 
 ---
 
-# 🔎 Example Prediction
+# 🔎Example Prediction
 
 The regression model can estimate AQI from pollutant values.
 
@@ -129,7 +129,7 @@ The model predicts the **corresponding AQI value**.
 
 ---
 
-# 📌 Key Findings
+# 📌Key Findings
 
 * 🔥 **PM2.5 has the strongest influence on AQI**
 * ⚠ PM10 and NO₂ show moderate impact
@@ -139,7 +139,7 @@ The model predicts the **corresponding AQI value**.
 
 ---
 
-# 🛠 Tools & Technologies
+# 🛠Tools & Technologies
 
 ### 📊 Programming & Analysis
 
@@ -180,7 +180,7 @@ source("regression_model.R")
 ```
 
 ---
-🚀 Future Improvements
+# 🚀Future Improvements
 
 Possible extensions to this project include:
 
