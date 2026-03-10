@@ -2,164 +2,189 @@
 
 ## Project Description
 
-A data analysis project using a secondary dataset of 154 cities to study air quality and apply multiple linear regression to understand how major pollutants (PM2.5, PM10, O₃, NO₂, SO₂ and CO) influence the Air Quality Index (AQI).
+This project analyses air quality data from multiple cities to understand how different pollutants influence the **Air Quality Index (AQI)**.
+
+Using **multiple linear regression**, the project models the relationship between AQI and major pollutants including **PM2.5, PM10, O₃, NO₂, SO₂, and CO**.
+
+The analysis combines **statistical modelling in R** with **interactive dashboard visualisations in Excel** to better interpret pollution patterns.
 
 ---
 
-## Project Objective
+# Project Objective
 
-The main objective of this project is to:
+The objectives of this project are to:
 
-* analyse air quality levels across different cities, and
-* identify which pollutants have the strongest impact on AQI using multiple regression analysis.
-
----
-
-## Dataset Information
-
-* Type: Secondary dataset
-* Number of cities: 154
-* Source: Mendeley Data – *Air Quality Index of Major Indian Cities and Stations*
-* Coverage: Indian cities and a few international locations
-
-### Features used
-
-* City
-* AQI
-* PM2.5
-* PM10
-* O₃
-* NO₂
-* SO₂
-* CO
+• Analyse air quality levels across cities
+• Understand which pollutants influence AQI the most
+• Build a **multiple regression model to predict AQI**
+• Create **visual dashboards to explore pollution trends**
 
 ---
 
-## Data Pre-processing
+# Dataset Information
 
-The following steps were performed before analysis:
+**Type:** Secondary dataset
+**Source:** Mendeley Data – *Air Quality Index of Major Indian Cities and Stations*
+**Observations:** 154 cities/stations
 
-* Removal of rows with completely missing values
-* Handling partial missing values using N/A
-* Removal of duplicate city records
-* Standardisation of city names
-* Cleaning non-numeric values such as “–” and “N/A”
-* Verification of unit consistency
+### Features
 
----
-
-## Final Variables Used
-
-| Variable | Description                         |
-| -------- | ----------------------------------- |
-| AQI      | Air Quality Index (target variable) |
-| PM2.5    | Fine particulate matter             |
-| PM10     | Coarse particulate matter           |
-| O₃       | Ozone                               |
-| NO₂      | Nitrogen dioxide                    |
-| SO₂      | Sulphur dioxide                     |
-| CO       | Carbon monoxide                     |
+| Feature   | Description               |
+| --------- | ------------------------- |
+| City      | Monitoring location       |
+| AQI       | Air Quality Index         |
+| PM2.5     | Fine particulate matter   |
+| PM10      | Coarse particulate matter |
+| O3        | Ozone                     |
+| NO2       | Nitrogen dioxide          |
+| SO2       | Sulphur dioxide           |
+| CO        | Carbon monoxide           |
+| Latitude  | Geographic coordinate     |
+| Longitude | Geographic coordinate     |
+| Date      | Observation date          |
+| Time      | Observation time          |
 
 ---
 
-## Air Quality Categorisation
+# Data Pre-processing
 
-The pollutants and AQI values were classified into:
+Before performing analysis, the following cleaning steps were applied:
 
-* Good
-* Moderate
-* Poor
-
-based on:
-
-* U.S. EPA guidelines for AQI
-* WHO Global Air Quality Guidelines for pollutants.
+• Removed units such as **µg/m³ and mg/m³**
+• Converted pollutant values to numeric format
+• Removed rows with missing AQI values
+• Cleaned non-numeric entries such as "–" or "N/A"
+• Checked consistency of pollutant units
+• Standardised column formatting
 
 ---
 
-## Exploratory Data Analysis
+# Exploratory Data Analysis & Visualisation
 
-The following visual analyses were performed:
+An **Excel dashboard** was created to explore pollution patterns across cities.
 
-* Pareto chart for AQI by city
-* Pareto chart for PM2.5 by city
-* Pareto chart for PM10 by city
-* Pareto chart for O₃ by city
-* Pareto chart for SO₂ by city
-* Line chart with error bars for NO₂ levels
+### AQI Dashboard
 
-These charts were used to identify the cities contributing most to overall pollution.
+<img src="images/dashboard.png" width="900">
 
 ---
 
-## Methodology – Multiple Linear Regression
+### Top 10 Most Polluted Locations
+
+Shows cities contributing most to high AQI values.
+
+<img src="images/top10_locations.png" width="600">
+
+---
+
+### AQI Trend Over Time
+
+Visualises how AQI levels change across observation dates.
+
+<img src="images/aqi_trend.png" width="600">
+
+---
+
+### Average Pollutant Levels
+
+Compares the average concentration of major pollutants affecting AQI.
+
+<img src="images/average_pollutants.png" width="600">
+
+---
+
+### PM2.5 vs AQI Relationship
+
+Scatter plot showing correlation between **PM2.5 concentration and AQI**.
+
+<img src="images/pm25_vs_aqi.png" width="600">
+
+---
+
+# Methodology – Multiple Linear Regression
+
+A **multiple linear regression model** was fitted using R.
 
 ### Dependent Variable
 
-* AQI
+AQI
 
 ### Independent Variables
 
-* PM2.5, PM10, O₃, NO₂, SO₂, CO
+PM2.5
+PM10
+O3
+NO2
+SO2
+CO
 
-### Regression model
+### Regression Model
 
-AQI = β₀ + β₁(PM2.5) + β₂(PM10) + β₃(O₃) + β₄(NO₂) + β₅(SO₂) + β₆(CO) + ε
-
----
-
-## Average Pollution Levels (154 Cities)
-
-| Pollutant | Average Value |
-| --------- | ------------- |
-| AQI       | 107.18        |
-| PM2.5     | 112.3 µg/m³   |
-| PM10      | 53.2 µg/m³    |
-| O₃        | 16.7 µg/m³    |
-| NO₂       | 9.5 µg/m³     |
-| SO₂       | 9.8 µg/m³     |
-| CO        | 7.1 mg/m³     |
+AQI = β₀ + β₁(PM2.5) + β₂(PM10) + β₃(O3) + β₄(NO2) + β₅(SO2) + β₆(CO) + ε
 
 ---
 
-## Conceptual Regression Model (for interpretation)
+# Example Prediction
 
-AQI = 26.88
+The model can estimate AQI given pollutant concentrations.
 
-* 0.50(PM2.5)
-* 0.30(PM10)
-* 0.20(O₃)
-* 0.40(NO₂)
-* 0.10(SO₂)
-* 0.15(CO)
+Example:
 
-*(Conceptual coefficients are used to demonstrate relative contribution.)*
+PM2.5 = 112.3
+PM10 = 53.2
+O3 = 16.7
+NO2 = 9.5
+SO2 = 9.8
+CO = 7.1
 
----
-
-## Key Findings
-
-* PM2.5 is the largest contributor to AQI.
-* PM10 and NO₂ show moderate influence.
-* SO₂ and CO contribute comparatively less.
-* Most cities fall under moderate to poor air quality categories.
+Predicted AQI is calculated using the regression model.
 
 ---
 
-##  Tools and Technologies
+# Key Findings
 
-* Python
-* Pandas
-* NumPy
-* Matplotlib / Seaborn
-* Jupyter Notebook
-
----
-## How to Run
-
-1. Clone the repository
-2. Open the notebook file
-3. Install required libraries
-4. Run all cells in order
+• **PM2.5 has the strongest influence on AQI**
+• PM10 and NO2 show moderate impact
+• SO2 and CO contribute relatively less
+• Most cities fall within **moderate to poor AQI categories**
 
 ---
+
+# Tools and Technologies
+
+**Programming & Analysis**
+
+• R
+• ggplot2
+• Multiple Linear Regression (lm)
+
+**Data Processing**
+
+• Base R
+• CSV dataset handling
+
+**Visualization**
+
+• Excel Dashboard
+• Pivot Charts
+• Scatter Plots
+• Trend Analysis
+
+---
+
+# How to Run
+
+### Run Regression Analysis
+
+1. Open the R script
+2. Install required library
+
+```r
+install.packages("ggplot2")
+```
+
+3. Run the script
+
+```r
+source("regression_model.R")
+```
