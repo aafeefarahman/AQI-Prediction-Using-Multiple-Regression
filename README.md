@@ -2,11 +2,9 @@
 
 ## 📌Project Description
 
-This project analyses air quality data from multiple cities to understand how different pollutants influence the **Air Quality Index (AQI)**.
-
-Using **Multiple Linear Regression**, the project models the relationship between AQI and major pollutants including **PM2.5, PM10, O₃, NO₂, SO₂, and CO**.
-
-The analysis combines **statistical modelling in R** with **visual dashboard analysis in Excel** to better interpret pollution patterns.
+* Analyses air quality data from multiple cities to understand how different pollutants influence the Air Quality Index (AQI).
+* Uses Multiple Linear Regression to model the relationship between AQI and major pollutants including PM2.5, PM10, O₃, NO₂, SO₂, and CO.
+* Combines statistical modelling in R with visual dashboard analysis in Excel to better interpret pollution patterns and trends.
 
 ---
 
